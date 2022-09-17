@@ -107,3 +107,23 @@ a{
     text-transform: uppercase;
     color: #FFFFFF;
 }
+
+.MuiButtonBase-root {
+   color: #FFD700 !important;
+}
+
+.MuiFormLabel-root {
+    color: white !important;
+   
+}
+
+.MuiOutlinedInput-input {
+    outline-color: white !important;
+    outline-style: solid !important;
+    outline-width: 1px !important;
+    border-radius: 5px;
+}
+
+.MuiInputBase-input {
+    color: white !important;
+}

@@ -17,12 +17,14 @@ import {
     TableCell,
     TableBody,
 } from '@mui/material';
+import { Pagination } from '@mui/material';
 
 const CoinsTable = () => {
 
     const [coins, setCoins] = useState([]);
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
+    const [page, setPage] = useState(1);
 
     const navigate = useNavigate();
 
@@ -55,7 +57,9 @@ const CoinsTable = () => {
             primary: {
                 main: "#ffff",
             },
-            type: "light",
+            secondary: {
+                main: "#808080"
+            },
         },
     });
 
@@ -99,7 +103,7 @@ const CoinsTable = () => {
                         </TableHead>
                         <TableBody>
                         
-                            {coins.map((coin) => {
+                            {coins.slice((page - 1) * 10, (page - 1) * 10 + 10).map((coin) => {
                                  const profit = coin.price_change_percentage_24h > 0;
                                  return (
                                       <TableRow onClick={() => navigate(`/coins/${coin.id}`)}
@@ -164,6 +168,21 @@ const CoinsTable = () => {
                     </Table>)
                     }
                 </TableContainer>
+                <Pagination
+                color="secondary"
+                count={10}
+                size="small"
+                style={{
+                    padding:20,
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center"
+                }}
+                onChange={(_, value) => {
+                    setPage(value);
+                    window.scroll(0, 450);
+                }}
+                />
             </Container>
         </ThemeProvider>
     )

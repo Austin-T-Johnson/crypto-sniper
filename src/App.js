@@ -5,18 +5,19 @@ import CoinPage from './Pages/CoinPage';
 import './App.css';
 
 function App() {
+
     return (
         <BrowserRouter>
-                <>
-                    <Header />
-                    <Routes>
-                        <Route path="/" exact element={<HomePage />} />
-                        <Route path="/coins/:id" element={<CoinPage />} />
-                    </Routes>
-                </>
-            </BrowserRouter>
+            <>
+                <Header />
+                <Routes>
+                    <Route path="/" exact element={<HomePage />} />
+                    <Route path="/coins/:id" element={<CoinPage />} />
+                </Routes>
+            </>
+        </BrowserRouter>
 
-        
+
     );
 }
 
