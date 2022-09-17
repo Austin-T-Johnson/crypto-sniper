@@ -1,7 +1,7 @@
 import React from 'react'
 import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './Header.css';
+
 const Header = () => {
     const navigate = useNavigate();
   return (

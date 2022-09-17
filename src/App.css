@@ -56,3 +56,54 @@ a{
     text-decoration: none;
 }
 
+.header-text {
+    color: gold;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.banner-content {
+    background-image: url("../public/banner2.jpeg");
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    padding-top: 25px;
+    justify-content: space-around;
+    
+}
+
+.typography-h2{
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+}
+
+.typography-p {
+    color: darkgray;
+    text-transform: capitalize;
+    font-family: 'Montserrat';
+}
+
+.tagline {
+    display: flex;
+    height: 40%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.carousel{
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
