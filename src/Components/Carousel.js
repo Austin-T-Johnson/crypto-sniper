@@ -12,6 +12,10 @@ const Carousel = () => {
         setTrending(data);
     };
 
+    const numbersWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     useEffect(() => {
         fetchTrending()
     }, ['USD'])
@@ -34,7 +38,7 @@ const Carousel = () => {
                     </span>
                 </span>
 
-                <span>${coin.current_price}</span>
+                <span>${numbersWithCommas(coin.current_price)}</span>
 
 
             </Link>

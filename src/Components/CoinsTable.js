@@ -41,6 +41,10 @@ const CoinsTable = () => {
         })
     }
 
+    const numbersWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
 
     useEffect(() => {
         fetchCoins();
@@ -130,10 +134,10 @@ const CoinsTable = () => {
                                             fontWeight: 500
                                           }}
                                           >
-                                            {coin.current_price}
+                                            {numbersWithCommas(coin.current_price)}
                                             <br></br>
                                             {profit && "+"}
-                                            {coin.price_change_percentage_24h.toFixed(2)}%
+                                            {numbersWithCommas(coin.price_change_percentage_24h.toFixed(2))}%
                                           </TableCell>
                                           <TableCell
                                           align="right"
@@ -151,7 +155,7 @@ const CoinsTable = () => {
                                             color: "white"
                                           }}
                                           >
-                                            ${coin.market_cap.toFixed(2)}
+                                            ${numbersWithCommas(coin.market_cap.toFixed(2))}
                                           </TableCell>
                                       </TableRow>
                                   )
