@@ -15,7 +15,7 @@ const CoinPage = () => {
         const { data } = await axios.get(SingleCoin(id));
         setCoin(data)
     }
-    console.log("HERE:", coin)
+   
     useEffect(() => {
         fetchCoin();
     }, []);
